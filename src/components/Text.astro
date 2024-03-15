@@ -1,0 +1,24 @@
+---
+import type { HTMLTag } from 'astro/types';
+
+export interface Props {
+	as: HTMLTag;
+	className: string;
+}
+
+const { as: Tag, className } = Astro.props;
+const fontSize = '4.8rem';
+---
+
+<Tag class:list={['title', className]}>
+	<slot />
+</Tag>
+
+<style define:vars={{ fontSize }}>
+	.title {
+		font-weight: var(--font-bold);
+		span {
+			color: var(--blue);
+		}
+	}
+</style>

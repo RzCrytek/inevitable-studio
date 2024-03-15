@@ -1,0 +1,97 @@
+---
+import '@/styles/_reset.scss';
+
+import ButtonScrollTop from '@/components/ButtonScrollTop.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<main>
+			<slot />
+		</main>
+
+		<ButtonScrollTop />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--alternative-base-font: Arial, Helvetica, sans-serif;
+		--black: #000;
+		--white: #fff;
+		--blue: #386af5;
+		--lemon-green: #cdf000;
+		--color-1: #1b1b1b;
+		--color-2: #292929;
+		--color-3: #979797;
+
+		--font-family-alfabet: 'Alfabet', var(--alternative-base-font);
+
+		--font-light: 300;
+		--font-medium: 500;
+		--font-bold: bold;
+	}
+
+	html {
+		box-sizing: border-box;
+		z-index: 1;
+	}
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: inherit;
+	}
+
+	html,
+	body {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		font-size: 10px;
+		font-family: var(--font-family-alfabet);
+	}
+
+	input[type='text'],
+	input[type='password'],
+	input[type='search'],
+	select,
+	textarea {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+
+	/* APP */
+
+	html {
+		background-color: var(--black);
+		color: var(--white);
+		scroll-behavior: smooth;
+	}
+
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>

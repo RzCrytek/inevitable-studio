@@ -1,0 +1,65 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import LogoHeader from '../assets/icons/logo-header.svg';
+import Facebook from '../assets/icons/facebook.svg';
+import Instagram from '../assets/icons/instagram.svg';
+import Twitter from '../assets/icons/twitter.svg';
+
+interface Icons {
+	img: ImageMetadata;
+	alt: string;
+}
+
+const icons: Icons[] = [
+	{
+		img: Facebook,
+		alt: 'Ícono de Facebook',
+	},
+	{
+		img: Instagram,
+		alt: 'Ícono de Instagram',
+	},
+	{
+		img: Twitter,
+		alt: 'Ícono de Twitter',
+	},
+];
+---
+
+<header class="header">
+	<Image src={LogoHeader} alt="Logo de Inevitable studio" loading="eager" />
+
+	<ul>
+		{
+			icons.map((icon) => (
+				<li>
+					<a href="!#">
+						<Image src={icon.img} alt={icon.alt} loading="eager" />
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</header>
+
+<style lang="scss">
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 4.2rem 0 10.4rem;
+
+		ul {
+			display: flex;
+
+			li {
+				margin-left: 2.4rem;
+			}
+
+			a {
+				display: block;
+			}
+		}
+	}
+</style>

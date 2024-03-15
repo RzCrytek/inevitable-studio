@@ -1,0 +1,38 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/sections/Hero.astro';
+import OurProjects from '@/sections/OurProjects.astro';
+import Form from '@/sections/Form.astro';
+---
+
+<Layout title="Inevitable">
+	<Hero />
+	<OurProjects />
+	<Form />
+</Layout>
+
+<style is:global>
+	p {
+		font-size: 1.6rem;
+	}
+
+	strong,
+	b {
+		font-weight: var(--font-bold);
+	}
+
+	.font-72 {
+		font-size: 7.2rem;
+		line-height: 8rem;
+	}
+
+	.font-48 {
+		font-size: 4.8rem;
+		line-height: 5.6rem;
+	}
+
+	.opacity-0 {
+		opacity: 0;
+		visibility: hidden;
+	}
+</style>

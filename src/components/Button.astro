@@ -1,0 +1,59 @@
+---
+interface Props {
+	text: string;
+	disabled?: boolean;
+	href?: string;
+}
+
+const { text, href, disabled = 'false' } = Astro.props;
+---
+
+<>
+	{
+		href ? (
+			<a href={href}>{text}</a>
+		) : (
+			<button type="button" disabled={disabled}>
+				{text}
+			</button>
+		)
+	}
+</>
+
+<style lang="scss">
+	button,
+	a {
+		font-family: var(--font-family-alfabet);
+		font-weight: var(--font-bold);
+		font-size: 1.6rem;
+		height: 56px;
+		border-radius: 2.8rem;
+		padding: 1.8rem 6rem;
+		border: 0;
+		margin-inline: auto;
+		cursor: pointer;
+	}
+
+	button {
+		background-color: transparent;
+		color: var(--white);
+		border: 2px solid var(--white);
+		transition: all 0.3s ease;
+
+		&:disabled {
+			cursor: not-allowed;
+			opacity: 0.6;
+		}
+
+		&:hover {
+			background-color: var(--white);
+			color: var(--color-2);
+		}
+	}
+
+	a {
+		background-color: var(--white);
+		color: var(--color-2);
+		text-decoration: none;
+	}
+</style>

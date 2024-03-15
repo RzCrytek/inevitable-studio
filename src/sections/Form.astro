@@ -1,0 +1,94 @@
+---
+import Footer from '@/components/Footer.astro';
+import Text from '@/components/Text.astro';
+import FieldInput from '@/components/FieldInput.astro';
+import Select from '@/components/Select.astro';
+import Button from '@/components/Button.astro';
+
+import { PROJECT_TYPE } from '@/data/project-type';
+
+import '@/styles/field.scss';
+
+interface Options {
+	value: number;
+	text: string;
+}
+
+const options: Options[] = [
+	{
+		value: 1,
+		text: 'Option 1',
+	},
+	{
+		value: 2,
+		text: 'Option 2',
+	},
+];
+---
+
+<section id="form-section">
+	<div class="container">
+		<Text as="h2" className="font-48">Únete al <span>cambio constante</span></Text>
+		<h3 class="sub-title">Escríbenos y trabajemos juntos</h3>
+
+		<div class="form-box">
+			<div class="fields">
+				<FieldInput label="Nombre" name="name" />
+				<FieldInput label="Apellido" name="last_name" />
+				<FieldInput label="Nombre de la empresa" name="rubro" />
+				<FieldInput type="tel" label="Teléfono" name="phone" />
+				<FieldInput type="text" label="Correo Electrónico" name="email" />
+				<FieldInput label="Nombre" name="name" />
+				<Select label="País" name="country" options={options} />
+				<Select label="Ciudad" name="city" options={options} />
+				<Select label="Tipo de proyecto" name="project_type" options={PROJECT_TYPE} />
+				<FieldInput type="number" label="Presupuesto aprox." name="approximate_budget" />
+
+				<div class="wrap-btn">
+					<Button text="ENVÍAR" disabled />
+				</div>
+			</div>
+		</div>
+
+		<Footer />
+	</div>
+
+	<style lang="scss">
+		#form-section {
+			background-image: url('/images/bg-contact.png');
+			background-size: cover;
+			padding: 6rem 1.5rem 0;
+
+			.container {
+				max-width: 880px;
+				width: 100%;
+				text-align: center;
+				margin-inline: auto;
+			}
+
+			.sub-title {
+				font-weight: var(--font-medium);
+				font-size: 3.2rem;
+				margin: 2.5rem 0 6rem;
+			}
+
+			.form-box {
+				background-color: var(--color-2);
+				box-shadow: 0 4px 24px rgba(0, 0, 0, 0.24);
+				border-radius: 1.6rem;
+				padding: 3.6rem 2.8rem 4.8rem;
+			}
+
+			.fields {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.wrap-btn {
+				width: 100%;
+				text-align: center;
+				margin-top: 3.2rem;
+			}
+		}
+	</style>
+</section>

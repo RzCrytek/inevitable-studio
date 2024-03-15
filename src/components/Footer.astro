@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import LogoFooter from '../assets/icons/logo-stduio.svg';
+---
+
+<footer class="footer">
+	<Image src={LogoFooter} alt="Logo de Inevitable studio" />
+	<p class="footer-text">Copyright © Inevitable Studio {new Date().getFullYear()} - All rights reserved</p>
+</footer>
+
+<style lang="scss">
+	.footer {
+		text-align: center;
+		padding: 5.4rem 0 2.4rem;
+
+		&-text {
+			font-weight: var(--font-bold);
+			font-size: 1.6rem;
+			margin-top: 3.2rem;
+		}
+	}
+</style>

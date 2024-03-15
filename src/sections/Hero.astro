@@ -1,0 +1,71 @@
+---
+import Header from '@/components/Header.astro';
+import Text from '@/components/Text.astro';
+import Button from '@/components/Button.astro';
+---
+
+<section id="hero-section">
+	<Header />
+	<div class="content">
+		<Text as="h1" className="font-72">El cambio es <span>inevitable.</span></Text>
+
+		<div class="description">
+			El mundo <b>evoluciona constantemente.</b> Cada día se desarrollan nuevas tecnologías, <b>debemos adaptarnos al cambio</b> y utilizarlo
+			a nuestro favor.
+		</div>''
+
+		<Button text="CONVERSEMOS" href="#form-section" />
+
+		<div class="parallax absolute">
+			<div class="bg absolute"></div>
+			<div class="shadow absolute"></div>
+		</div>
+	</div>
+</section>
+
+<style>
+	#hero-section {
+		position: relative;
+		padding: 0 7rem 8.8rem;
+		height: 1040px;
+
+		.absolute {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.parallax {
+			z-index: -1;
+
+			.bg {
+				background-image: url('/images/bg-hero.png');
+				background-repeat: no-repeat;
+			}
+
+			.shadow {
+				background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 73%, var(--black) 100%),
+					linear-gradient(261deg, rgba(27, 27, 27, 0) 24%, var(--black) 82%),
+					radial-gradient(circle at 94% 50%, rgba(27, 27, 27, 0) 0%, rgba(0, 0, 0, 0) 36%, rgba(0, 0, 0, 0.64) 74%, rgba(0, 0, 0, 0.64) 74%);
+				background-repeat: no-repeat;
+				z-index: 1;
+			}
+		}
+
+		.content {
+			max-width: 600px;
+			width: 100%;
+		}
+
+		.description {
+			max-width: 450px;
+			width: 100%;
+			font-weight: var(--font-light);
+			font-size: 2rem;
+			line-height: 2.4rem;
+			margin: 8.8rem 0 5.8rem;
+		}
+	}
+</style>

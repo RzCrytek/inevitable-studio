@@ -1,0 +1,14 @@
+---
+interface Props {
+	label: string;
+	name: string;
+	type?: astroHTML.JSX.HTMLInputTypeAttribute;
+}
+
+const { label, name, type = 'text' } = Astro.props;
+---
+
+<div class="field">
+	<input class="form-control" type={type} name={name} required />
+	<label class="form-label" for={name}>{label}</label>
+</div>

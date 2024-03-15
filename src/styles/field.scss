@@ -1,0 +1,52 @@
+.field {
+	position: relative;
+	padding-inline: 4rem;
+	width: calc(50% - 3.2rem);
+	height: 64px;
+	margin-bottom: 1.6rem;
+	margin-inline: 1.6rem;
+
+	.form-control {
+		position: relative;
+		font-family: var(--font-family-alfabet);
+		color: var(--white);
+		font-weight: var(--font-medium);
+		font-size: 1.6rem;
+		background-color: transparent;
+		width: 100%;
+		border: 0;
+		margin: 0;
+		border-bottom: 1px solid var(--color-3);
+		height: 100%;
+		padding-top: 2.5rem;
+		padding-bottom: 1.8rem;
+		z-index: 1;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:focus + .form-label,
+		&:valid + .form-label {
+			transform: translateY(-200%);
+			font-size: 1.2rem;
+		}
+
+		&.select {
+			background-image: url('/icons/chervlot.svg');
+			background-repeat: no-repeat;
+			background-position: center right 1.2rem;
+		}
+	}
+
+	.form-label {
+		position: absolute;
+		top: 2.4rem;
+		left: 4rem;
+		color: var(--white);
+		font-weight: var(--font-light);
+		font-size: 1.6rem;
+		opacity: 0.6;
+		transition: all 0.3s ease;
+	}
+}

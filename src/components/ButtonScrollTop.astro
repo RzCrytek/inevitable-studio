@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import IconBackToTop from '../assets/icons/back-to-top.svg';
+---
+
+<div id="button-wrap" class="">
+	<button id="scroll-to-top" aria-label="Volver al inicio de la página">
+		<Image src={IconBackToTop} alt="Ícono volver al inicio" />
+	</button>
+</div>
+
+<style lang="scss">
+	#button-wrap {
+		position: fixed;
+		bottom: 4rem;
+		right: 4rem;
+		transition: all 0.3s ease;
+
+		button {
+			background: inherit;
+			padding: 0;
+			margin: 0;
+			border: 0;
+			cursor: pointer;
+		}
+	}
+</style>
+
+<script>
+	let timeout: number = 0;
+	const $button = document.getElementById('scroll-to-top') as HTMLButtonElement;
+
+	const DISPLAY = { BLOCK: 'block', NONE: 'none' } as const;
+
+	function toggleScrollToTop() {
+		const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+		const display = scrollTop > 100 ? DISPLAY.BLOCK : DISPLAY.NONE;
+
+		if ($button) {
+			const parent = $button.closest('#button-wrap');
+			parent?.classList.toggle('opacity-0', display === DISPLAY.NONE);
+		}
+	}
+
+	function throttledScrollHandler() {
+		if (!timeout) {
+			timeout = requestAnimationFrame(() => {
+				toggleScrollToTop();
+				timeout = 0;
+			});
+		}
+	}
+
+	window.addEventListener('scroll', throttledScrollHandler);
+
+	$button.addEventListener('click', () => {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	});
+</script>
