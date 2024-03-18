@@ -14,11 +14,13 @@ import Text from '@/components/Text.astro';
 		</div>''
 
 		<a class="button" href="#form-section">CONVERSEMOS</a>
+	</div>
 
-		<div class="parallax absolute">
-			<div class="bg absolute"></div>
-			<div class="shadow absolute"></div>
-		</div>
+	<div class="parallax absolute">
+		<div class="bg absolute"></div>
+		<div class="hand-human absolute"></div>
+		<div class="hand-robot absolute"></div>
+		<div class="shadow absolute"></div>
 	</div>
 </section>
 
@@ -48,6 +50,22 @@ import Text from '@/components/Text.astro';
 			.bg {
 				background-image: url('/images/bg-hero.png');
 				background-repeat: no-repeat;
+			}
+
+			.hand-human {
+				background-image: url('/images/hand-human.png');
+				background-repeat: no-repeat;
+				background-position: bottom left;
+				background-size: 100%;
+				z-index: 1;
+			}
+
+			.hand-robot {
+				background-image: url('/images/hand-robot.png');
+				background-repeat: no-repeat;
+				background-position: 150px 60px;
+				background-size: 100%;
+				z-index: 1;
 			}
 
 			.shadow {
