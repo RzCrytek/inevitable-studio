@@ -1,0 +1,34 @@
+.button {
+	font-family: var(--font-family-alfabet);
+	font-weight: var(--font-bold);
+	font-size: 1.6rem;
+	height: 56px;
+	border-radius: 2.8rem;
+	padding: 1.8rem 6rem;
+	border: 0;
+	margin-inline: auto;
+	cursor: pointer;
+}
+
+button.button {
+	background-color: transparent;
+	color: var(--white);
+	border: 2px solid var(--white);
+	transition: all 0.3s ease;
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.6;
+	}
+
+	&:hover {
+		background-color: var(--white);
+		color: var(--color-2);
+	}
+}
+
+a.button {
+	background-color: var(--white);
+	color: var(--color-2);
+	text-decoration: none;
+}

@@ -1,0 +1,17 @@
+.form-box {
+	background-color: var(--color-2);
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.24);
+	border-radius: 1.6rem;
+	padding: 3.6rem 2.8rem 4.8rem;
+}
+
+.fields {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.wrap-btn {
+	width: 100%;
+	text-align: center;
+	margin-top: 3.2rem;
+}

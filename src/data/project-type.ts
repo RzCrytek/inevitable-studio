@@ -1,27 +1,27 @@
 interface ProjectType {
-	value: number;
-	text: string;
+	id: number;
+	name: string;
 }
 
 export const PROJECT_TYPE: ProjectType[] = [
 	{
-		value: 1,
-		text: 'Web informativa',
+		id: 1,
+		name: 'Web informativa',
 	},
 	{
-		value: 2,
-		text: 'E-commerce',
+		id: 2,
+		name: 'E-commerce',
 	},
 	{
-		value: 2,
-		text: 'App',
+		id: 3,
+		name: 'App',
 	},
 	{
-		value: 2,
-		text: 'Sistema de gestión',
+		id: 4,
+		name: 'Sistema de gestión',
 	},
 	{
-		value: 2,
-		text: 'Otro',
+		id: 5,
+		name: 'Otro',
 	},
 ];
