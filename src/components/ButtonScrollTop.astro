@@ -15,6 +15,12 @@ import IconBackToTop from '../assets/icons/back-to-top.svg';
 		bottom: 4rem;
 		right: 4rem;
 		transition: all 0.3s ease;
+		z-index: 1;
+
+		@media (max-width: 600px) {
+			bottom: 1rem;
+			right: 1rem;
+		}
 
 		button {
 			background: inherit;
@@ -22,6 +28,13 @@ import IconBackToTop from '../assets/icons/back-to-top.svg';
 			margin: 0;
 			border: 0;
 			cursor: pointer;
+
+			img {
+				@media (max-width: 600px) {
+					width: 4.8rem;
+					height: 4.8rem;
+				}
+			}
 		}
 	}
 </style>

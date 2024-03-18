@@ -3,6 +3,10 @@
 	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.24);
 	border-radius: 1.6rem;
 	padding: 3.6rem 2.8rem 4.8rem;
+
+	@media (max-width: 600px) {
+		padding: 2.4rem;
+	}
 }
 
 .fields {

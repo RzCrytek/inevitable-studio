@@ -8,6 +8,10 @@
 	border: 0;
 	margin-inline: auto;
 	cursor: pointer;
+
+	@media (max-width: 600px) {
+		padding-inline: 4rem;
+	}
 }
 
 button.button {

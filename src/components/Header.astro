@@ -51,13 +51,20 @@ const icons: Icons[] = [
 		padding: 4.2rem 0 10.4rem;
 
 		@media (max-width: 600px) {
+			padding: 2rem 0 8rem;
 		}
 
 		ul {
 			display: flex;
 
 			li {
-				margin-left: 2.4rem;
+				&:not(:first-child) {
+					margin-left: 2.4rem;
+
+					@media (max-width: 600px) {
+						margin-left: 0.8rem;
+					}
+				}
 			}
 
 			a {

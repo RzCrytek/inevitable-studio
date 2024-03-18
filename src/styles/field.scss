@@ -1,10 +1,14 @@
 .field {
 	position: relative;
-	padding-inline: 4rem;
-	width: calc(50% - 3.2rem);
+	width: calc(50% - 3%);
 	height: 64px;
+	padding-inline: 5%;
+	margin-inline: 1.5%;
 	margin-bottom: 1.6rem;
-	margin-inline: 1.6rem;
+
+	@media (max-width: 600px) {
+		width: 100%;
+	}
 
 	.form-control {
 		position: relative;

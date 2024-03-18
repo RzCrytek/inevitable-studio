@@ -11,7 +11,11 @@ import Text from '@/components/Text.astro';
 <style>
 	#our-projects-section {
 		text-align: center;
-		padding: 3.6rem 0 8.8rem;
+		padding: 3.6rem 1.5rem 8.8rem;
+
+		@media (max-width: 600px) {
+			height: 500px;
+		}
 
 		.content {
 			background-color: antiquewhite;
@@ -20,6 +24,10 @@ import Text from '@/components/Text.astro';
 			height: 800px;
 			margin-top: 7rem;
 			margin-inline: auto;
+
+			@media (max-width: 600px) {
+				height: 600px;
+			}
 		}
 	}
 </style>
