@@ -1,6 +1,7 @@
 ---
 import Header from '@/components/Header.astro';
 import Text from '@/components/Text.astro';
+import Parallax from '@/components/Parallax/Parallax';
 ---
 
 <section id="hero-section">
@@ -16,11 +17,11 @@ import Text from '@/components/Text.astro';
 		<a class="button" href="#form-section">CONVERSEMOS</a>
 	</div>
 
-	<div class="parallax absolute">
-		<div class="bg absolute"></div>
-		<div class="hand-human absolute"></div>
-		<div class="hand-robot absolute"></div>
-		<div class="shadow absolute"></div>
+	<div id="parallax" class="absolute parallax">
+		<div class="absolute bg parallax-bg"></div>
+		<div class="absolute hand-human parallax-hand-human"></div>
+		<div class="absolute hand-robot parallax-hand-robot"></div>
+		<div class="absolute shadow"></div>
 	</div>
 </section>
 
@@ -29,6 +30,7 @@ import Text from '@/components/Text.astro';
 		position: relative;
 		padding: 0 7rem 8.8rem;
 		height: 1040px;
+		/* overflow: hidden; */
 
 		@media (max-width: 600px) {
 			padding: 0 1.5rem 5rem;
@@ -36,6 +38,7 @@ import Text from '@/components/Text.astro';
 			height: auto;
 		}
 
+		.simpleParallax,
 		.absolute {
 			position: absolute;
 			top: 0;
@@ -49,6 +52,7 @@ import Text from '@/components/Text.astro';
 
 			.bg {
 				background-image: url('/images/bg-hero.png');
+				background-size: cover;
 				background-repeat: no-repeat;
 			}
 
@@ -96,3 +100,26 @@ import Text from '@/components/Text.astro';
 		}
 	}
 </style>
+
+<script>
+	import simpleParallax from 'simple-parallax-js';
+
+	const background = document.getElementsByClassName('parallax-bg');
+	new simpleParallax(background, {
+		scale: 1.2,
+		orientation: 'up',
+	});
+
+	const bgHandHuman = document.getElementsByClassName('parallax-hand-human');
+	new simpleParallax(bgHandHuman, {
+		scale: 1.1,
+		orientation: 'right',
+		maxTransition: 200,
+	});
+
+	const bgHandRobot = document.getElementsByClassName('parallax-hand-robot');
+	new simpleParallax(bgHandRobot, {
+		scale: 1.1,
+		orientation: 'left',
+	});
+</script>

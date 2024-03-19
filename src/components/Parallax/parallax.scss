@@ -1,0 +1,41 @@
+.absolute {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.parallax {
+	z-index: -1;
+
+	.bg {
+		background-image: url('/images/bg-hero.png');
+		background-repeat: no-repeat;
+		width: 105%;
+	}
+
+	.hand-human {
+		background-image: url('/images/hand-human.png');
+		background-repeat: no-repeat;
+		background-position: bottom left;
+		background-size: 100%;
+		z-index: 1;
+	}
+
+	.hand-robot {
+		background-image: url('/images/hand-robot.png');
+		background-repeat: no-repeat;
+		background-position: 150px 60px;
+		background-size: 100%;
+		z-index: 1;
+	}
+
+	.shadow {
+		background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 73%, var(--black) 100%),
+			linear-gradient(261deg, rgba(27, 27, 27, 0) 24%, var(--black) 82%),
+			radial-gradient(circle at 94% 50%, rgba(27, 27, 27, 0) 0%, rgba(0, 0, 0, 0) 36%, rgba(0, 0, 0, 0.64) 74%, rgba(0, 0, 0, 0.64) 74%);
+		background-repeat: no-repeat;
+		z-index: 1;
+	}
+}
