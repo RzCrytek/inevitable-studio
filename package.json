@@ -14,14 +14,17 @@
     "@astrojs/react": "^3.1.0",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@types/react-slick": "^0.23.13",
     "astro": "^4.5.2",
     "autoprefixer": "^10.4.18",
     "cssnano": "^6.1.0",
     "lightningcss": "^1.24.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-slick": "^0.30.2",
     "sass": "^1.71.1",
-    "simple-parallax-js": "^5.6.2"
+    "simple-parallax-js": "^5.6.2",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "prettier": "^3.2.5",

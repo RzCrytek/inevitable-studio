@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>arrows copy</title>
+    <g id="1.-IS_landingpage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.0.0.Desktop_HD" transform="translate(-1253, -1427)" stroke="#386AF5">
+            <g id="arrows-copy" transform="translate(1281, 1455) scale(-1, 1) translate(-1281, -1455)translate(1253, 1427)">
+                <circle id="Oval" stroke-width="2" cx="28" cy="28" r="27"></circle>
+                <polyline id="Path-32" stroke-width="3" transform="translate(28, 27) rotate(-270) translate(-28, -27)" points="16 21 27.9842652 33 40 21"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

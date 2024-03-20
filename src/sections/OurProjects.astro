@@ -1,33 +1,55 @@
 ---
 import Text from '@/components/Text.astro';
+import Slider from '@/components/ProjectSlider/ProjectSlider.tsx';
 ---
 
 <section id="our-projects-section">
 	<Text as="h2" className="font-48" style="margin-bottom:30px;">Conoce <span>nuestros proyectos</span></Text>
 
-	<div class="content"></div>
+	<div class="content">
+		<Slider client:only="react" />
+	</div>
 </section>
 
 <style>
 	#our-projects-section {
+		background-image: url('/images/shadow-slider.png');
+		position: relative;
 		text-align: center;
-		padding: 3.6rem 1.5rem 8.8rem;
+		padding: 2.4rem 1.5rem 8.8rem;
 
 		@media (max-width: 600px) {
-			height: 500px;
+			padding-bottom: 4rem;
+		}
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+
+			width: 50%;
+			height: 100%;
+			z-index: -1;
+		}
+
+		&:before {
+			background-image: url('/images/decoration-left.png');
+			left: 0;
+			background-position: -180px;
+		}
+
+		&:after {
+			background-image: url('/images/decoration-right.png');
+			right: 0;
 		}
 
 		.content {
-			background-color: antiquewhite;
-			max-width: 1180px;
+			max-width: 750px;
 			width: 100%;
-			height: 800px;
+			/* height: 800px; */
 			margin-top: 7rem;
 			margin-inline: auto;
-
-			@media (max-width: 600px) {
-				height: 600px;
-			}
 		}
 	}
 </style>

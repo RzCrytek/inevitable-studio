@@ -18,7 +18,7 @@ button.button {
 	background-color: transparent;
 	color: var(--white);
 	border: 2px solid var(--white);
-	transition: all 0.3s ease;
+	transition: var(--transition);
 
 	&:disabled {
 		cursor: not-allowed;
