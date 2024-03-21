@@ -1,53 +1,35 @@
-import { useRef, useState, type FC } from 'react';
-import Slider from 'react-slick';
+import { useState, type FC } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 import './projectSlider.scss';
 
-const initialWith = 750;
-
 const ProjectSlider: FC = () => {
 	const [showDescription, setShowDescription] = useState<number | null>(null);
-	const [width, setWidth] = useState<number>(initialWith);
-	const slickRef = useRef<any>(null);
-
-	const settings = {
-		className: 'slider-project',
-		centerMode: true,
-		infinite: true,
-		centerPadding: '0rem',
-		slidesToShow: 3,
-		speed: 500,
-		dots: false,
-		// variableWidth: true,
-		// adaptiveHeight: true,
-		// focusOnSelect: true,
-		nextArrow: <NextArrow />,
-		prevArrow: <PrevArrow />,
-		responsive: [
-			{
-				breakpoint: 601,
-				settings: {
-					slidesToShow: 3,
-					infinite: true,
-					dots: false,
-					arrows: false,
-				},
-			},
-		],
-	};
 
 	const onClick = (index: number) => {
+		console.log('demo', index);
 		setShowDescription(index === showDescription ? null : index);
 	};
 
 	return (
-		// <div style={{ width: width + 'px' }}>
-		<Slider ref={slickRef} {...settings}>
+		<Swiper
+			centeredSlides={true}
+			spaceBetween={10}
+			pagination={{
+				clickable: true,
+			}}
+			slidesPerView={3}
+			loop={true}
+			navigation={true}
+			modules={[Pagination]}
+			className="slider-project"
+		>
 			{[1, 2, 3, 4, 5, 6].map((index, item) => (
-				<div className="box" onClick={() => onClick(index)} key={index}>
+				<SwiperSlide className="box" onClick={() => onClick(index)} key={index}>
 					<div className="box-content">
 						{showDescription === index && (
 							<div className="description">
@@ -64,13 +46,12 @@ const ProjectSlider: FC = () => {
 						)}
 
 						<picture>
-							<img src="/images/project-1.png" width={250} alt="" />
+							<img className="image" src="/images/project-1.png" width={250} alt="" />
 						</picture>
 					</div>
-				</div>
+				</SwiperSlide>
 			))}
-		</Slider>
-		// </div>
+		</Swiper>
 	);
 };
 
@@ -86,6 +67,7 @@ const NextArrow = (props: any): JSX.Element => {
 
 const PrevArrow = (props: any): JSX.Element => {
 	const { className, onClick } = props;
+
 	return (
 		<div className={className} onClick={onClick}>
 			<img src="/icons/arrow-prev.svg" width="100%" alt="" />
