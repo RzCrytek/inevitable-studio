@@ -22,9 +22,14 @@ const ProjectSlider: FC = () => {
 			pagination={{
 				clickable: true,
 			}}
-			slidesPerView={3}
+			slidesPerView={1}
 			loop={true}
 			navigation={true}
+			breakpoints={{
+				600: {
+					slidesPerView: 3,
+				},
+			}}
 			modules={[Pagination]}
 			className="slider-project"
 		>
@@ -46,7 +51,7 @@ const ProjectSlider: FC = () => {
 						)}
 
 						<picture>
-							<img className="image" src="/images/project-1.png" width={250} alt="" />
+							<img className="image" src="/images/project-1.png" alt="" />
 						</picture>
 					</div>
 				</SwiperSlide>
