@@ -37,22 +37,24 @@ const ProjectSlider: FC = () => {
 				<SwiperSlide className="box" onClick={() => onClick(index)} key={index}>
 					<div className="box-content">
 						{showDescription === index && (
-							<div className="description">
-								<p className="project-title">Cofaine.pe - Web y Redes Sociales</p>
-								<p className="project-description">
-									Cofaine nos encomendó la tarea de crear una web disruptiva y muy visual para presentar sus deliciosos cafés, su plan de
-									suscripción; así como también, para vender directamente a través de este canal.
-								</p>
+							<>
+								<div className="description">
+									<p className="project-title">Cofaine.pe - Web y Redes Sociales</p>
+									<p className="project-description">
+										Cofaine nos encomendó la tarea de crear una web disruptiva y muy visual para presentar sus deliciosos cafés, su plan de
+										suscripción; así como también, para vender directamente a través de este canal.
+									</p>
 
-								<a className="button" href="https://www.google.com.pe/" target="_blank">
-									Link
-								</a>
-							</div>
+									<a className="button" href="https://www.google.com.pe/" target="_blank">
+										Link
+									</a>
+								</div>
+
+								<picture>
+									<img className="image" src="/images/default.png" alt="" />
+								</picture>
+							</>
 						)}
-
-						<picture>
-							<img className="image" src="/images/default.png" alt="" />
-						</picture>
 					</div>
 				</SwiperSlide>
 			))}
