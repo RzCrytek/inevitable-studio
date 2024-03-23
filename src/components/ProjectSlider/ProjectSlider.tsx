@@ -51,7 +51,7 @@ const ProjectSlider: FC = () => {
 						)}
 
 						<picture>
-							<img className="image" src="/images/project-1.png" alt="" />
+							<img className="image" src="/images/default.png" alt="" />
 						</picture>
 					</div>
 				</SwiperSlide>

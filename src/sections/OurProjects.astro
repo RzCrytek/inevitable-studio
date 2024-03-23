@@ -14,6 +14,7 @@ import Slider from '@/components/ProjectSlider/ProjectSlider.tsx';
 <style>
 	#our-projects-section {
 		background-image: url('/images/shadow-slider.png');
+		background-size: 100%;
 		position: relative;
 		text-align: center;
 		padding: 2.4rem 1.5rem 8.8rem;
@@ -27,7 +28,7 @@ import Slider from '@/components/ProjectSlider/ProjectSlider.tsx';
 			content: '';
 			position: absolute;
 			top: 0;
-
+			background-size: 100%;
 			width: 50%;
 			height: 100%;
 			z-index: -1;
@@ -36,7 +37,7 @@ import Slider from '@/components/ProjectSlider/ProjectSlider.tsx';
 		&:before {
 			background-image: url('/images/decoration-left.png');
 			left: 0;
-			background-position: -180px;
+			/* background-position: -180px; */
 		}
 
 		&:after {
@@ -45,7 +46,7 @@ import Slider from '@/components/ProjectSlider/ProjectSlider.tsx';
 		}
 
 		.content {
-			max-width: 750px;
+			max-width: 1200px;
 			width: 100%;
 			/* height: 800px; */
 			margin-top: 7rem;
