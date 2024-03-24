@@ -106,8 +106,10 @@ import Parallax from '@/components/Parallax/Parallax';
 
 	const background = document.getElementsByClassName('parallax-bg');
 	new simpleParallax(background, {
-		scale: 1.2,
+		scale: 1.5,
 		orientation: 'up',
+		transition: 'cubic-bezier(0,0,0,15)',
+		maxTransition: 80,
 	});
 
 	const bgHandHuman = document.getElementsByClassName('parallax-hand-human');
