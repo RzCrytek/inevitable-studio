@@ -21,6 +21,10 @@
 						width: auto;
 					}
 				}
+
+				picture {
+					display: block;
+				}
 			}
 		}
 	}
@@ -128,7 +132,7 @@
 		}
 
 		picture {
-			display: block;
+			display: none;
 			width: 400px;
 			height: 100%;
 			border-radius: 1.6rem;
