@@ -6,12 +6,12 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import './projectSlider.scss';
+import { projects } from './data';
 
 const ProjectSlider: FC = () => {
 	const [showDescription, setShowDescription] = useState<number | null>(null);
 
 	const onClick = (index: number) => {
-		console.log('demo', index);
 		setShowDescription(index === showDescription ? null : index);
 	};
 
@@ -33,21 +33,21 @@ const ProjectSlider: FC = () => {
 			modules={[Pagination]}
 			className="slider-project"
 		>
-			{[1, 2, 3, 4, 5, 6].map((index, item) => (
-				<SwiperSlide className="box" onClick={() => onClick(index)} key={index}>
+			{projects.map((project) => (
+				<SwiperSlide className="box" onClick={() => onClick(project.id)} key={project.id}>
 					<div className="box-content">
-						{showDescription === index && (
+						{showDescription === project.id && (
 							<>
 								<div className="description">
-									<p className="project-title">Cofaine.pe - Web y Redes Sociales</p>
+									<p className="project-title">{project.title}</p>
 									<p className="project-description">
-										Cofaine nos encomendó la tarea de crear una web disruptiva y muy visual para presentar sus deliciosos cafés, su plan de
-										suscripción; así como también, para vender directamente a través de este canal.
+										"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+										aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 									</p>
 
-									<a className="button" href="https://www.google.com.pe/" target="_blank">
+									{/* <a className="button" href="https://www.google.com.pe/" target="_blank">
 										Link
-									</a>
+									</a> */}
 								</div>
 
 								<picture>
