@@ -1,4 +1,5 @@
 import { useState, type FC } from 'react';
+import { Image } from 'astro:assets';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 
@@ -40,10 +41,7 @@ const ProjectSlider: FC = () => {
 							<>
 								<div className="description">
 									<p className="project-title">{project.title}</p>
-									<p className="project-description">
-										"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-										aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-									</p>
+									<p className="project-description">{project.description}</p>
 
 									{/* <a className="button" href="https://www.google.com.pe/" target="_blank">
 										Link
@@ -51,7 +49,7 @@ const ProjectSlider: FC = () => {
 								</div>
 
 								<picture>
-									<img className="image" src="/images/default.png" alt="" />
+									<img className="image" src={project.image} alt={project.title} />
 								</picture>
 							</>
 						)}
