@@ -35,9 +35,14 @@ const ProjectSlider: FC = () => {
 			className="slider-project"
 		>
 			{projects.map((project) => (
-				<SwiperSlide className="box" onClick={() => onClick(project.id)} key={project.id}>
-					<div className="box-content">
-						{showDescription === project.id && (
+				<SwiperSlide
+					className="box"
+					style={{ backgroundImage: `url(${project.image})` }}
+					onClick={() => onClick(project.id)}
+					key={project.id}
+				>
+					{showDescription === project.id && (
+						<div className="box-content">
 							<>
 								<div className="description">
 									<p className="project-title">{project.title}</p>
@@ -52,8 +57,8 @@ const ProjectSlider: FC = () => {
 									<img className="image" src={project.image} alt={project.title} />
 								</picture>
 							</>
-						)}
-					</div>
+						</div>
+					)}
 				</SwiperSlide>
 			))}
 		</Swiper>
